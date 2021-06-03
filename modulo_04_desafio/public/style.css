@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --background-color: #5CDB95;
+    --text-color: #05386B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+header {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.links {
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    position: relative;
+}
+
+.links a + a {
+    margin-left: 18px;
+}
+
+.links a.active {
+    font-weight: bold;
+}
+
+.links a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: all 200ms ease-in-out;
+}
+
+/* CARD */
+
+.card {
+    width: 800px;
+    min-height: 400px;
+    margin: 80px auto;
+    background-color: #ddd;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    box-shadow: 2px -2px 4px 1px rgba(0, 0, 0, 0.1);
+    animation: card 0.2s ease-in;
+}
+
+@keyframes card {
+    from {
+        opacity: 0;
+        transform: translateX(0)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(1)
+    }
+};
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px 0 0 12px;
+}
+
+/* CARD DETAILS */
+
+.card-details {
+    padding: 32px;
+}
+
+.card-details h3 {
+    color: var(--text-color);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.item {
+    margin-top: 16px;
+    border-bottom: 1px solid #777;
+}
+
+.item:last-child {
+    border: none;
+}
+
+.item div:nth-child(1) {
+    color: #555;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.item div:nth-child(2) {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.item span {
+    display: inline-block;
+    background-color: turquoise;
+    margin-right: 8px;
+    border-radius: 12px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* FORM */
+
+section {
+    position: relative;
+}
+
+form {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+select,
+input {
+    background-color: #ddd;
+    outline: 0;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="url"] {
+    width: 100%;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+}
+
+form button {
+    width: 30%;
+    background-color: var(--text-color);
+    padding: 8px;
+    color: white;
+    margin-top: 8px;
+    margin-left: 10%;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.form-button {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    width: 90%;
+}
+
+.form-button button {
+    background-color: tomato;
+}
+
+/* SHOW */
+
+.button {
+    display: block;
+    width: 100%;
+    background-color: var(--text-color);
+    padding: 8px;
+    margin-top: 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* TABLE INDEX */
+
+.table-card {
+    display: block;
+    box-sizing: border-box;
+}
+
+table {
+    padding: 20px;
+    border-spacing: 0;
+}
+
+thead {
+    text-align: left;
+}
+
+td, th {
+    border-bottom: 1px solid #7777;
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+th {
+    padding-bottom: 14px;
+}
+
+td {
+    padding: 18px 0 18px 0;
+}
+
+thead tr th {
+    color: #7777;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+tr td:first-child {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+}
+
+tr td:first-child span {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-left: 80%;
+}
+
+tr td:last-child a,
+.create-button {
+    background-color: var(--text-color);
+    padding: 8px;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.create-button {
+    display: inline-block;
+    margin: 12px 0 12px 24px;
+}
+

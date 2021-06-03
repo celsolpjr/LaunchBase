@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% block head %} {% endblock %}
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="links">
+
+                {% block header %} {% endblock %}
+                <a href="https://discordapp.com/invite/gCRAFhc">Comunidade</a>
+                <a href="mailto:oi@rocketseat.com.br">Email</a>
+                <a href="tel:+5547992078767">Telefone</a>
+
+            </div>
+        </header>
+
+       {% block content %} {% endblock %}
+
+    </body>
+</html>

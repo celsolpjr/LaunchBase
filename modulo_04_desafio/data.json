@@ -1,0 +1,45 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1577221084712-45b0445d2b00?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=643&q=80",
+      "name": "Celso Lopes Junior Junior",
+      "email": "celso.8882011@gmail.com",
+      "birth": 829353600000,
+      "graduate": "6EF",
+      "grade": "12"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1577221084712-45b0445d2b00?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=643&q=80",
+      "name": "Fernando Sales Campos",
+      "birth": 840931200000,
+      "graduate": "MS",
+      "class_type": "D",
+      "atuation_area": "Matemática, Português, Inglês",
+      "created_at": 1621903730165
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "name": "Joao da Silva",
+      "birth": 327715200000,
+      "graduate": "DT",
+      "class_type": "P",
+      "atuation_area": "Matemática, Português",
+      "created_at": 1621905179593
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1577221084712-45b0445d2b00?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=643&q=80",
+      "name": "Joao da Silva",
+      "birth": 840931200000,
+      "graduate": "MS",
+      "class_type": "D",
+      "atuation_area": "Matemática, Português, Inglês",
+      "created_at": 1621903730165
+    }
+  ]
+}
