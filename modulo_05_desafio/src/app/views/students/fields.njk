@@ -1,0 +1,37 @@
+<div class="item">
+    <div>Avatar</div>
+    <input type="url" name="avatar_url" placeholder="http://" value="{{student.avatar_url}}">
+</div>
+
+<div class="item">
+    <div>Nome Completo</div>
+    <input type="text" name="name" placeholder="Seu nome" value="{{student.name}}">
+</div>
+
+<div class="item">
+    <div>Email</div>
+    <input type="email" name="email" value="{{student.email}}">
+</div>
+
+<div class="item">
+    <div>Data de Nascimento</div>
+    <input type="date" name="birth" value="{{student.birth}}">
+</div>
+
+<div class="item">
+    <select name="graduate">
+        <option value="5EF" {% if student.graduate == "5EF" %} selected {% endif %}>5º Ano do ensino fundamental</option>
+        <option value="6EF" {% if student.graduate == "6EF" %} selected {% endif %}>6º Ano do ensino fundamental</option>
+        <option value="7EF" {% if student.graduate == "7EF" %} selected {% endif %}>7º Ano do ensino fundamental</option>
+        <option value="8EF" {% if student.graduate == "8EF" %} selected {% endif %}>8º Ano do ensino fundamental</option>
+        <option value="1EM" {% if student.graduate == "1EM" %} selected {% endif %}>1º Ano do ensino Médio</option>
+        <option value="2EM" {% if student.graduate == "2EM" %} selected {% endif %}>2º Ano do ensino Médio</option>
+        <option value="3EM" {% if student.graduate == "3EM" %} selected {% endif %}>3º Ano do ensino Médio</option>
+    </select>
+</div>
+
+<div class="item">
+    <div>Carga horária semanal</div>
+    <input type="number" name="grade" value="{{student.grade}}">
+</div>
+

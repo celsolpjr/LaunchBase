@@ -23,7 +23,8 @@ module.exports = {
 
         return {
             iso: `${year}-${month}-${day}`,
-            birthday: `${day}/${month}`
+            birthday: `${day}/${month}`,
+            format: `${day}/${month}/${year}`
         };
     }
 }
