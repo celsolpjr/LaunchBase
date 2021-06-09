@@ -42,7 +42,13 @@ module.exports = {
     },
 
     edit(req, res) {
-        return;
+        instructor.find(req.params.id, function(instructor) {
+            if (!instructor) return res.send("instructor not found!")
+
+            instructor.birth = date(instructor.birth).iso;
+
+            return res.render("instructors/edit", { instructor })
+        })
     },
 
     put(req, res) {
@@ -54,12 +60,16 @@ module.exports = {
             }
         }
 
-        let { avatar_url, birth, name, services, gender } = req.body;
-
-        return;
+        instructor.update(req.body, function() {
+            return res.redirect(`/instructors/${req.body.id}`)
+        })
     },
     
     delete(req, res) {
-        return;
+        
+        instructor.delete(req.body.id, function() {
+            return res.redirect(`/instructors`)
+        })
+
     }
 }

@@ -62,6 +62,7 @@ module.exports = {
             day: `${day}`,
             month: `${month}`,
             year: `${year}`,
+            createdAt: `${day}/${month}/${year}`,
             birthday: `${day}-${month}`,
             iso: `${year}-${month}-${day}`
         }

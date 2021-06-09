@@ -5,5 +5,5 @@ module.exports = new Pool ({
     password: "gamerock8",
     host: "localhost",
     port: 5432,
-    database: "my_teacher"
+    database: "teacher_students"
 })
