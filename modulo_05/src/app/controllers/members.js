@@ -27,7 +27,7 @@ module.exports = {
             }
         }
 
-        member.create(req.body, function(member) {
+        Member.create(req.body, function(member) {
             return res.redirect(`/members/${member.id}`)
         }) 
     },
