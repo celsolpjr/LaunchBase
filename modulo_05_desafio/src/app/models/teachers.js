@@ -14,6 +14,17 @@ module.exports = {
 
     },
 
+    foundBy(filter, callback) {
+        db.query(`SELECT *
+            FROM teachers
+            WHERE teachers.name ILIKE '%${filter}%'
+            ORDER BY name ASC`, function(err, results) {
+                if(err) throw `Database Error ${err}`
+
+                callback(results.rows);
+            })
+    },
+
     create(data, callback) {
 
         const query = `
@@ -94,5 +105,6 @@ module.exports = {
 
             callback();
         })
-    }
+    },
+
 }

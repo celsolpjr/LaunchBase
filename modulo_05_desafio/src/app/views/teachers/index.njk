@@ -10,7 +10,13 @@
     
     <section class="card table-card">
         <table width="100%">
-            <a href="/teachers/create" class="create-button">Novo</a>
+            <div id="header">
+                <a href="/teachers/create" class="create-button" id="create-button-id">Novo</a>
+                <form id="header-form" action="/teachers" method="GET">
+                    <input id="header-input" type="text" name="filter" placeholder="Filtrar Professor">
+                    <button type="submit" id="header-button">Filtrar</button>
+                </form>
+            </div>
             <thead>
                 <tr>
                     <th>Nome Completo</th>

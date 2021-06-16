@@ -277,3 +277,41 @@ tr td:last-child a,
     margin: 12px 0 12px 24px;
 }
 
+/* FILTER */
+
+#create-button-id {
+    display: block;
+    width: 80px;
+    text-align: center;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#header-form {
+    display: flex;
+    align-items: center;
+}
+
+#header-input {
+    box-sizing: border-box;
+    border: 2px solid black;
+    padding: 4px;
+    margin-right: 6px;
+}
+
+#header-button {
+    margin-right: 8%;
+    cursor: pointer;
+    background-color: var(--text-color);
+    padding: 8px;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+

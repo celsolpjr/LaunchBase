@@ -1,16 +1,19 @@
-const student = require("../models/students");
+const Student = require("../models/students");
 const { age, graduation, classType, date } = require("../../libs/utils");
 
 module.exports = {
     
     index(req, res) {
-        student.all(function(students) {
+        Student.all(function(students) {
             return res.render("students/index", { students })
         })
     },
 
     create(req, res) {
-        return res.render("students/create");
+
+        Student.selectOptionsTeachers(function(options) {
+            return res.render("students/create", { teachers: options });
+        })
     },
 
     post(req, res) {
@@ -22,16 +25,18 @@ module.exports = {
             }
         }
     
-        student.create(req.body, function() {
+        Student.create(req.body, function() {
             return res.redirect("/students");
         })
     },
 
     show(req, res) {
 
-        student.find(req.params.id, function(student) {
+        Student.find(req.params.id, function(student) {
 
             student.birth = date(student.birth).birthday;
+
+            console.log(student);
 
             return res.render(`students/show`, { student });
         })
@@ -40,11 +45,14 @@ module.exports = {
 
     edit(req, res) {
 
-        student.find(req.params.id, function(student) {
+        Student.find(req.params.id, function(student) {
 
             student.birth = date(student.birth).iso;
 
-            return res.render(`students/edit`, { student });
+            Student.selectOptionsTeachers(function(options) {
+                return res.render(`students/edit`, { student, teachers: options });
+            })
+            
         })
     },
 
@@ -58,7 +66,7 @@ module.exports = {
             }
         }
 
-        student.update(req.body, function() {
+        Student.update(req.body, function() {
             return res.redirect(`/students/${req.body.id}`);
         })
     
@@ -66,7 +74,7 @@ module.exports = {
 
     delete(req, res) {
 
-        student.delete(req.body.id, function() {
+        Student.delete(req.body.id, function() {
             return res.redirect("/students");
         })
     
