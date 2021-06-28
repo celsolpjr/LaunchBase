@@ -35,13 +35,3 @@
     <input type="number" name="grade" value="{{student.grade}}">
 </div>
 
-<div class="item">
-    <select name="teacher">
-        {% for teacher in teachers %}
-            <option value="{{ teacher.id }}" {% if student.teacher_id == teacher.id %} selected {% endif %}>{{ teacher.name }}</option>
-        {% endfor %}
-    </select>
-</div>
-
-
-

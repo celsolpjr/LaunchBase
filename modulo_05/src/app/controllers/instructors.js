@@ -1,41 +1,29 @@
-const { age, date } = require("../../lib/utils");
-const Instructor = require("../models/instructors")
+const Instructor = require("../models/Instructor");
 
 module.exports = {
 
     index(req, res) {
 
-        let { filter, page, limit } = req.query;
+        Instructor.all(function(instructors) {
+            return res.render("instructors/index", { instructors })
+        })
 
-        page = page || 1;
-        limit = limit || 2;
-        let offset = limit * (page - 1);
+    },
 
-        const params = {
-            filter,
-            page,
-            limit,
-            offset,
-            callback(instructors) {
+    show(req, res) {
 
-                const pagination = {
-                    page,
-                    total: Math.ceil(instructors[0].total / limit)
-                }
-
-                return res.render("instructors/index", { instructors, pagination, filter });
-            }
-        }
-
-        Instructor.paginate(params);
+        return
 
     },
 
     create(req, res) {
-        return res.render("instructors/create");
+
+       return res.render("instructors/create");
+
     },
 
     post(req, res) {
+
         const keys = Object.keys(req.body);
 
         for (key of keys) {
@@ -45,33 +33,17 @@ module.exports = {
         }
 
         Instructor.create(req.body, function(instructor) {
-            return res.redirect(`/instructors/${instructor.id}`)
-        }) 
-    },
-
-    show(req, res) {
-        Instructor.find(req.params.id, function(instructor) {
-            if (!instructor) return res.send("instructor not found!")
-
-            instructor.age = age(instructor.birth);
-            instructor.services = instructor.services.split(",");
-            instructor.created_at = date(instructor.created_at).format
-
-            return res.render("instructors/show", { instructor })
+            return res.redirect(`/instructors/${instructor.id}`);
         })
+
     },
 
     edit(req, res) {
-        Instructor.find(req.params.id, function(instructor) {
-            if (!instructor) return res.send("instructor not found!")
 
-            instructor.birth = date(instructor.birth).iso;
-
-            return res.render("instructors/edit", { instructor })
-        })
     },
 
     put(req, res) {
+
         const keys = Object.keys(req.body);
 
         for (key of keys) {
@@ -80,16 +52,14 @@ module.exports = {
             }
         }
 
-        Instructor.update(req.body, function() {
-            return res.redirect(`/instructors/${req.body.id}`)
-        })
+        return
+
     },
-    
+
     delete(req, res) {
-        
-        Instructor.delete(req.body.id, function() {
-            return res.redirect(`/instructors`)
-        })
+
+        return
 
     }
+    
 }

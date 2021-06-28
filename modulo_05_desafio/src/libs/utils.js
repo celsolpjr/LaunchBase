@@ -1,5 +1,5 @@
 module.exports = {
-    age: function(timestamp) {
+    age (timestamp) {
 
         const todayDate = new Date();
         const birthDate = new Date(timestamp);
@@ -22,7 +22,7 @@ module.exports = {
 
     },
 
-    graduation: function(params) {
+    graduation (params) {
         switch(params) {
             case "EM":
                 return "Ensino Médio Completo";
@@ -42,7 +42,7 @@ module.exports = {
         }
     },
 
-    classType: function(params) {
+    classType (params) {
         if (params == "P") {
             return "Presencial";
         } else {
@@ -50,7 +50,7 @@ module.exports = {
         }
     },
 
-    date: function(timestamp) {
+    date (timestamp) {
 
         const date = new Date(timestamp);
 
@@ -62,14 +62,13 @@ module.exports = {
             day: `${day}`,
             month: `${month}`,
             year: `${year}`,
-            createdAt: `${day}/${month}/${year}`,
             birthday: `${day}-${month}`,
             iso: `${year}-${month}-${day}`
         }
 
     },
 
-    grade: function(params) {
+    grade (params) {
         switch(params) {
             case "5EF":
                 return "5º Ano do ensino fundamental"
